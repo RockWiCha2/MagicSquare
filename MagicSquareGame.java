@@ -70,12 +70,17 @@ public class MagicSquareGame {
     }
 
     private void makeMove(int r, int c, String dir) {
-
+        
         int row = r - 1; // user uses 1-based indexing
         int col = c - 1;
 
         int newRow = row;
         int newCol = col;
+
+        if (row < 0 || row >= n || col < 0 || col >= n) {
+            System.out.println("Invalid position");
+            return;
+        }
 
         switch (dir) {
             case "U": newRow = (row - 1 + n) % n; break;
