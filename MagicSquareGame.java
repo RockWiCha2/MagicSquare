@@ -62,8 +62,10 @@ public class MagicSquareGame {
             String dir = scanner.next();
 
             makeMove(r, c, dir.toUpperCase());
-            System.out.println("Moves: " + moves);
-            moves++;
+            if (makeMove(r, c, dir.toUpperCase())) {
+                moves++;
+                System.out.println("Moves: " + moves);
+            }
         }
 
         System.out.println("Solved in " + moves + " moves!");
