@@ -69,19 +69,19 @@ public class MagicSquareGame {
         System.out.println("Solved in " + moves + " moves!");
     }
 
-    private void makeMove(int r, int c, String dir) {
-        
-        int row = r - 1; // user uses 1-based indexing
+    private boolean makeMove(int r, int c, String dir) {
+
+        int row = r - 1;
         int col = c - 1;
-
-        int newRow = row;
-        int newCol = col;
-
+    
         if (row < 0 || row >= n || col < 0 || col >= n) {
             System.out.println("Invalid position");
-            return;
+            return false;
         }
-
+    
+        int newRow = row;
+        int newCol = col;
+    
         switch (dir) {
             case "U": newRow = (row - 1 + n) % n; break;
             case "D": newRow = (row + 1) % n; break;
@@ -89,12 +89,14 @@ public class MagicSquareGame {
             case "R": newCol = (col + 1) % n; break;
             default:
                 System.out.println("Invalid direction (use U, D, L, R)");
-                return;
+                return false;
         }
-
+    
         int temp = current[row][col];
         current[row][col] = current[newRow][newCol];
         current[newRow][newCol] = temp;
+    
+        return true;
     }
 
     private boolean isSolved() {
