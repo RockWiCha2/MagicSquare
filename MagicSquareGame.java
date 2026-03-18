@@ -88,7 +88,7 @@ public class MagicSquareGame {
             case "L": newCol = (col - 1 + n) % n; break;
             case "R": newCol = (col + 1) % n; break;
             default:
-                System.out.println("Invalid direction");
+                System.out.println("Invalid direction (use U, D, L, R)");
                 return;
         }
 
