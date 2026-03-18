@@ -16,8 +16,9 @@ public class Main {
         }
 
         MagicSquare square = new MagicSquare(n);
-
         square.generate();
-        square.print();
+
+        MagicSquareGame game = new MagicSquareGame(square);
+        game.startGame();
     }
 }
