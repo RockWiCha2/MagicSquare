@@ -57,8 +57,8 @@ public class MagicSquareGame {
             print();
 
             System.out.print("Enter move (row col direction U/D/L/R): ");
-            int r = scanner.nextInt();
-            int c = scanner.nextInt();
+            int r = getValidInt(scanner);
+            int c = getValidInt(scanner);
             String dir = scanner.next();
 
             makeMove(r, c, dir.toUpperCase());
@@ -114,5 +114,13 @@ public class MagicSquareGame {
             }
             System.out.println();
         }
+    }
+
+    private int getValidInt(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            System.out.println("Please enter a valid number");
+            scanner.next(); // clear invalid input
+        }
+        return scanner.nextInt();
     }
 }
