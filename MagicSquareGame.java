@@ -51,7 +51,8 @@ public class MagicSquareGame {
 
     public void startGame() {
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("\nShuffled magic square:");
+        print();
         while (!isSolved()) {
 
             print();
