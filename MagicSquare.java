@@ -40,4 +40,8 @@ public class MagicSquare {
             System.out.println();
         }
     }
+
+    public int[][] getSquare() {
+        return square;
+    }
 }
